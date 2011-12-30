@@ -1,6 +1,5 @@
 <!--XSL template to convert NLM XML documents into HTML
 created by Aaron D'Sa for Cambridge Medicine Journal
-
 -->
 
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -18,18 +17,13 @@ created by Aaron D'Sa for Cambridge Medicine Journal
 
 	<xsl:output method="xml" indent="yes"/>
 
-
+<!--Outline of the article-->
 
 <xsl:template match="/">
 	<html>
-	
-		
-		
-	<body>
-		
-		
+		<body>
 		<xsl:apply-templates></xsl:apply-templates>
-	</body>
+		</body>
 	</html>
 </xsl:template>
 
@@ -113,7 +107,9 @@ created by Aaron D'Sa for Cambridge Medicine Journal
 <!--REFERENCES-->
 
 <xsl:template match="/article/back/ref-list">
-	<div><xsl:apply-templates></xsl:apply-templates>
+	<div>
+	<hr></hr>
+	<xsl:apply-templates></xsl:apply-templates>
 	</div>
 </xsl:template>
 

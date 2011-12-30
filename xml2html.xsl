@@ -1,9 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--XSL template to convert NLM XML documents into HTML
 created by Aaron D'Sa for Cambridge Medicine Journal
 -->
-
-<?xml version="1.0" encoding="UTF-8" ?>
-
 <!-- New document created with EditiX at Fri Dec 30 12:00:46 GMT 2011 -->
 
 <xsl:stylesheet version="2.0" 
@@ -108,17 +106,17 @@ created by Aaron D'Sa for Cambridge Medicine Journal
 
 <xsl:template match="/article/back/ref-list">
 	<div>
-	<hr></hr>
 	<xsl:apply-templates></xsl:apply-templates>
 	</div>
 </xsl:template>
 
-<xsl:template match="/article/back/ref-list/title">
+<!--<xsl:template match="/article/back/ref-list/title">
 	<h2><xsl:apply-templates></xsl:apply-templates>
 	</h2>
-</xsl:template>
+</xsl:template>-->
  
  <xsl:template match="/article/back/ref-list">
+	 <hr />
 	 <h2>References
 	 </h2>
 	 

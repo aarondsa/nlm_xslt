@@ -15,52 +15,75 @@ created by Aaron D'Sa for the Cambridge Medicine Journal
 
 	<xsl:output method="xml" indent="yes"/>
 
-<!--Outline of the article-->
-
-<xsl:template match="/">
-	<html>
-		<body>
-		<xsl:apply-templates></xsl:apply-templates>
-		</body>
-	</html>
-</xsl:template>
-
-<!--FRONT OF THE ARTICLE-->
-
-<xsl:template match="/article/front">
-	<div><xsl:apply-templates></xsl:apply-templates>
-	</div>
- </xsl:template>
-
-<xsl:template match="/article/front/journal-meta">
-	<table>
-	<tr>
-	<td><strong>Journal ID:</strong></td><td><xsl:apply-templates select="journal-id"></xsl:apply-templates></td>
-	</tr>
+<!--Styling
+Front:
+	Classes: front, front-journal, front-article
+	Journal Metadata: strong
+	Article Title: h2
+	Article Subtitle: h3
 	
-	<tr>
-	<td><strong>Journal Name:</strong></td><td><xsl:apply-templates select="journal-title-group/journal-title"></xsl:apply-templates></td>
-	</tr>
-	</table>
-</xsl:template>
+Body: 
+	Classes: body, table-of-contents, section, subheading, xref, figure
+	Table of contents title: h3
+	Subheading: h3
+-->
 
-<xsl:template match="/article/front/article-meta">
-	<table>
-	<tr>
-	<td><h2><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></h2></td>
-	</tr>
-	
-	<tr>
-	<td><h3><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></h3></td>
-	</tr>
-	</table>
-</xsl:template>
+
+<!-- Section 1: Skeleton of the article-->
+
+	<xsl:template match="/">
+		<html>
+			<body>
+			<xsl:apply-templates></xsl:apply-templates>
+			</body>
+		</html>
+	</xsl:template>
+
+<!--FRONT-->
+
+<!--Put the front in a <div> class: front-->
+
+	<xsl:template match="/article/front">
+		<div class="front"><xsl:apply-templates></xsl:apply-templates>
+		</div>
+	 </xsl:template>
+
+<!--Display journal metadata-->
+
+	<xsl:template match="/article/front/journal-meta">
+		<table class="front front-journal">
+		<tr>
+		<td><strong>Journal ID:</strong></td><td><xsl:apply-templates select="journal-id"></xsl:apply-templates></td>
+		</tr>
+		
+		<tr>
+		<td><strong>Journal Name:</strong></td><td><xsl:apply-templates select="journal-title-group/journal-title"></xsl:apply-templates></td>
+		</tr>
+		</table>
+	</xsl:template>
+
+<!--Display article metadata-->
+
+	<xsl:template match="/article/front/article-meta">
+		<table class="front front-article">
+		<tr>
+		<td><h2><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></h2></td>
+		</tr>
+		
+		<tr>
+		<td><h3><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></h3></td>
+		</tr>
+		</table>
+	</xsl:template>
 
 <!--BODY OF THE ARTICLE-->
-<xsl:template match="article/body">
 
+<!--Table of contents-->
+
+<xsl:template match="article/body">
+		<div class="body table-of-contents">
 		<h3>Table of Contents</h3>
-		<table>
+		<table class="body table-of-contents">
 		<xsl:for-each select="sec/title">
 			<tr>
 			<td>
@@ -69,11 +92,12 @@ created by Aaron D'Sa for the Cambridge Medicine Journal
 			</tr>
 		</xsl:for-each>
 		</table>
+		</div>
 		<xsl:apply-templates></xsl:apply-templates>
 </xsl:template>
 
 <xsl:template match="/article/body/sec">
-	<div><xsl:apply-templates></xsl:apply-templates>
+	<div class="body section"><xsl:apply-templates></xsl:apply-templates>
 	</div>
  </xsl:template>
 
@@ -83,18 +107,18 @@ created by Aaron D'Sa for the Cambridge Medicine Journal
 </xsl:template>
 
 <xsl:template match="/article/body/sec/title">
-	<h2><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
-	</h2>
+	<h3 class="body subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
+	</h3>
 </xsl:template>
 
 <xsl:template match="//xref">
-	<a><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>
+	<a class="body xref"><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>
 		<sup><xsl:apply-templates></xsl:apply-templates>
 		</sup></a>
 </xsl:template>
 
 <xsl:template match="//fig">
-	<table class="sample" >
+	<table class="figure" >
 		<tr><td><xsl:apply-templates select="label"></xsl:apply-templates>	</td>
 		</tr>
 		<tr><td><img><xsl:attribute name="src"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute></img></td><td><xsl:apply-templates select="caption"></xsl:apply-templates></td>

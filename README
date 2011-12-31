@@ -1,0 +1,20 @@
+XSL template for converting NLM XML documents to HTML
+
+Created by Aaron D'Sa for the Cambridge Medicine Journal
+
+The repository contains the .xsl template, and the example article used to test the template. The example article is fully validated XML created by annotum.
+
+STRUCTURE OF TEMPLATE
+
+The template follows the structure of the NLM XML document
+
+  Section 1: Declarations and Includes
+
+  Section 2: Outline of html document
+
+  Section 3: Front (including article metadata and journal metadata)
+
+  Section 4: Body (including table of contents and article)
+
+  Section 5: Back (including references)
+

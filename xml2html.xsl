@@ -144,10 +144,11 @@ Body:
 	 <xsl:for-each select="ref">
 		  <tr><xsl:attribute name="id"><xsl:value-of select="@id"></xsl:value-of></xsl:attribute>
 		  
-		  <td  width="6%"><xsl:apply-templates select="label"></xsl:apply-templates>
+		  <td  style="vertical-align:top"  width="6%"><xsl:apply-templates select="label"></xsl:apply-templates>
 		  </td>
 		  
 		  <td>
+		  	<table>
 		  	<tr>
 		  	<td>
 			  	<xsl:for-each select=".//name">
@@ -160,13 +161,40 @@ Body:
 		  		<xsl:apply-templates select="mixed-citation"></xsl:apply-templates>	
 		  	</td>
 		  	</tr>
-
+		  	<tr>
+		  	<td>
+		  		<xsl:apply-templates select=".//article-title"></xsl:apply-templates><xsl:text> </xsl:text><i><xsl:apply-templates select=".//source"></xsl:apply-templates></i>
+		  	</td>
+		  	</tr>
+		  	</table>
 		  	
 		  </td>
 
 		 </tr>
 	 </xsl:for-each>
 	 </table>
+ </xsl:template>
+ 
+ <xsl:template match="article/back/fn-group">
+ 
+ 	 <hr />
+	 <h3>Footnotes
+	 </h3>
+ <table>
+ 	<xsl:for-each select="fn">
+ 		
+ 			<tr><xsl:attribute name="id"><xsl:value-of select="@id"></xsl:value-of></xsl:attribute>
+ 			<td style="vertical-align:top" width="6%" >
+ 				<xsl:apply-templates select="label"></xsl:apply-templates>
+ 			</td>
+ 			
+	 		<td>
+	 			<p><xsl:apply-templates select="p"></xsl:apply-templates></p>
+ 			</td>
+ 			</tr>
+
+ 	</xsl:for-each>
+ </table>
  </xsl:template>
  
 </xsl:stylesheet>

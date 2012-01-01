@@ -26,6 +26,7 @@ Body:
 	Classes: body, table-of-contents, section, subheading, xref, figure
 	Table of contents title: h3
 	Subheading: h3
+
 -->
 
 
@@ -129,15 +130,15 @@ Body:
 <!--REFERENCES-->
 
 <xsl:template match="/article/back/ref-list">
-	<div>
+	<div class="references" >
 	<xsl:apply-templates></xsl:apply-templates>
 	</div>
 </xsl:template>
 
 <xsl:template match="/article/back/ref-list">
 	 <hr />
-	 <h2>References
-	 </h2>
+	 <h3>References
+	 </h3>
 	 
 	 <table>
 	 <xsl:for-each select="ref">
@@ -146,7 +147,21 @@ Body:
 		  <td  width="6%"><xsl:apply-templates select="label"></xsl:apply-templates>
 		  </td>
 		  
-		  <td><xsl:apply-templates select="mixed-citation"></xsl:apply-templates>
+		  <td>
+		  	<tr>
+		  	<td>
+			  	<xsl:for-each select=".//name">
+			  		<xsl:apply-templates select="given-names"></xsl:apply-templates><xsl:text> </xsl:text><xsl:apply-templates select="surname"></xsl:apply-templates>, 
+			  	</xsl:for-each>
+		  	</td>
+		  	</tr>
+		  	<tr>
+		  	<td>
+		  		<xsl:apply-templates select="mixed-citation"></xsl:apply-templates>	
+		  	</td>
+		  	</tr>
+
+		  	
 		  </td>
 
 		 </tr>

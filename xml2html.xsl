@@ -27,6 +27,11 @@ Body:
 	Table of contents title: h3
 	Subheading: h3
 
+Back:
+	Classes: back, references, footnotes
+	References title: h3
+	Footnotes title: h3
+
 -->
 
 
@@ -93,6 +98,7 @@ Body:
 			</tr>
 		</xsl:for-each>
 		</table>
+		<hr></hr>
 		</div>
 		<xsl:apply-templates></xsl:apply-templates>
 </xsl:template>
@@ -130,12 +136,16 @@ Body:
 <!--REFERENCES-->
 
 <xsl:template match="/article/back/ref-list">
-	<div class="references" >
+	<div class="back" >
 	<xsl:apply-templates></xsl:apply-templates>
 	</div>
 </xsl:template>
 
+ <!--References group-->
+
 <xsl:template match="/article/back/ref-list">
+	 <div class="back references">
+
 	 <hr />
 	 <h3>References
 	 </h3>
@@ -173,28 +183,34 @@ Body:
 		 </tr>
 	 </xsl:for-each>
 	 </table>
+	 </div>
  </xsl:template>
  
- <xsl:template match="article/back/fn-group">
+ <!--Footnotes group-->
  
+ <xsl:template match="article/back/fn-group">
+ 	 <div class="back footnotes">
+
  	 <hr />
 	 <h3>Footnotes
 	 </h3>
- <table>
- 	<xsl:for-each select="fn">
- 		
- 			<tr><xsl:attribute name="id"><xsl:value-of select="@id"></xsl:value-of></xsl:attribute>
- 			<td style="vertical-align:top" width="6%" >
- 				<xsl:apply-templates select="label"></xsl:apply-templates>
- 			</td>
- 			
-	 		<td>
-	 			<p><xsl:apply-templates select="p"></xsl:apply-templates></p>
- 			</td>
- 			</tr>
-
- 	</xsl:for-each>
- </table>
+	 
+		 <table>
+		 	<xsl:for-each select="fn">
+		 		
+		 			<tr><xsl:attribute name="id"><xsl:value-of select="@id"></xsl:value-of></xsl:attribute>
+		 			<td style="vertical-align:top" width="6%" >
+		 				<xsl:apply-templates select="label"></xsl:apply-templates>
+		 			</td>
+		 			
+			 		<td>
+			 			<p><xsl:apply-templates select="p"></xsl:apply-templates></p>
+		 			</td>
+		 			</tr>
+		
+		 	</xsl:for-each>
+		 </table>
+  	 </div>
  </xsl:template>
  
 </xsl:stylesheet>

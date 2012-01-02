@@ -110,16 +110,18 @@ Back:
 		
 		<xsl:for-each select="contrib-group/contrib">
 		<tr>
-		<td  width="30">
-		<xsl:apply-templates select="name/given-names"></xsl:apply-templates>
-		<xsl:text> </xsl:text>
-		<xsl:apply-templates select="name/surname"></xsl:apply-templates>
-		<xsl:text>, </xsl:text>
-		<i><xsl:apply-templates select="role"></xsl:apply-templates></i>
+		<td>
+			<xsl:apply-templates select="name/given-names"></xsl:apply-templates>
+			<xsl:text> </xsl:text>
+			<xsl:apply-templates select="name/surname"></xsl:apply-templates>
+			<xsl:text>, </xsl:text>
+			<i><xsl:apply-templates select="role"></xsl:apply-templates></i>
 		</td>
 		
 		</tr>
 		</xsl:for-each>
+		
+		
 		
 		</table>
 	</xsl:template>

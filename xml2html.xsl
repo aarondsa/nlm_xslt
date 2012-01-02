@@ -58,27 +58,69 @@ Back:
 
 	<xsl:template match="/article/front/journal-meta">
 		<table class="front front-journal">
-		<tr>
-		<td><strong>Journal ID:</strong></td><td><xsl:apply-templates select="journal-id"></xsl:apply-templates></td>
-		</tr>
+		<xsl:if test="journal-id">
+			<tr>
+			<td><strong>Journal ID:</strong></td><td><xsl:apply-templates select="journal-id[1]"></xsl:apply-templates></td>
+			</tr>
+		</xsl:if>
 		
-		<tr>
-		<td><strong>Journal Name:</strong></td><td><xsl:apply-templates select="journal-title-group/journal-title"></xsl:apply-templates></td>
-		</tr>
+		<xsl:if test="journal-title-group/journal-title">
+			<tr>
+			<td><strong>Journal Name:</strong></td><td><xsl:apply-templates select="journal-title-group/journal-title"></xsl:apply-templates></td>
+			</tr>
+		</xsl:if>
+		
+		<xsl:if test="publisher/publisher-name">
+			<tr>
+			<td><strong>Publisher Name:</strong></td><td><xsl:apply-templates select="publisher/publisher-name"></xsl:apply-templates></td>
+			</tr>
+		</xsl:if>
+		
+		<xsl:if test="issn">
+			<tr>
+			<td><strong>ISSN:</strong></td><td><xsl:apply-templates select="issn"></xsl:apply-templates></td>
+			</tr>
+		</xsl:if>
+		
+		
 		</table>
+		
 	</xsl:template>
 
 <!--Display article metadata-->
 
 	<xsl:template match="/article/front/article-meta">
 		<table class="front front-article">
+		
 		<tr>
 		<td><h2><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></h2></td>
 		</tr>
 		
+		<xsl:if test="title-group/subtitle">
 		<tr>
 		<td><h3><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></h3></td>
 		</tr>
+		</xsl:if>
+		
+		<xsl:if test=".//subject">
+		<tr>
+		<td><h4><xsl:apply-templates select=".//subj-group[1]/subject[1]"></xsl:apply-templates></h4></td>
+		</tr>
+		</xsl:if>
+		
+		<xsl:for-each select="contrib-group/contrib">
+		<tr>
+		<td  width="30">
+		<xsl:apply-templates select="name/given-names"></xsl:apply-templates>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="name/surname"></xsl:apply-templates>
+		<xsl:text>, </xsl:text>
+		<i><xsl:apply-templates select="role"></xsl:apply-templates></i>
+		</td>
+		
+		</tr>
+		</xsl:for-each>
+		
 		</table>
 	</xsl:template>
 
@@ -88,10 +130,11 @@ Back:
 
 <xsl:template match="article/body">
 		<div class="body table-of-contents">
-		<h3>Table of Contents</h3>
+		<h3>Contents</h3>
 		<table class="body table-of-contents">
 		<xsl:for-each select="sec/title">
 			<tr>
+			<td  width="5%"></td>
 			<td>
 			<a><xsl:attribute name="href">#<xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:value-of select="."></xsl:value-of></a>
 			</td>

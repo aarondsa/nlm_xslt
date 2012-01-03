@@ -173,7 +173,12 @@ Back:
 <xsl:template match="//fig">
 	<table class="figure" >
 	
-		<tr><td><xsl:apply-templates select="label"></xsl:apply-templates>	</td>
+		<tr>
+			<td>
+				<strong>
+				<xsl:apply-templates select="label"></xsl:apply-templates>
+				</strong>
+			</td>
 		</tr>
 		
 		<tr>

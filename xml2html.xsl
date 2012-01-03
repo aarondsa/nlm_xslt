@@ -34,6 +34,7 @@ Back:
 
 -->
 
+<xsl:variable name="mediapath"></xsl:variable>
 
 <!-- Section 1: Skeleton of the article-->
 
@@ -171,10 +172,21 @@ Back:
 
 <xsl:template match="//fig">
 	<table class="figure" >
+	
 		<tr><td><xsl:apply-templates select="label"></xsl:apply-templates>	</td>
 		</tr>
-		<tr><td><img><xsl:attribute name="src"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute></img></td><td><xsl:apply-templates select="caption"></xsl:apply-templates></td>
+		
+		<tr>
+			<td>
+				<a><xsl:attribute name="href"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute>
+				<img width="100px" ><xsl:attribute name="src"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute></img>
+				</a>
+			</td>
+			<td>
+				<xsl:apply-templates select="caption"></xsl:apply-templates>
+			</td>
 		</tr>
+	
 	</table>
 </xsl:template>
 

@@ -10,10 +10,17 @@ The repository contains the .xsl template, the example article used to test the 
 
 # STRUCTURE OF TEMPLATE
 
-The template follows the structure of the NLM XML document
+The template follows the structure of a standard NLM XML document
 
 * Section 1: Declarations and Includes
 * Section 2: Outline of html document
 * Section 3: Front (including article metadata and journal metadata)
 * Section 4: Body (including table of contents and article)
 * Section 5: Back (including references)
+
+# TO DO:
+
+* Tidy handling of URLs of files referenced in XML
+* Complete CSS classes for all sections
+* Fix display of article section
+* Put <title> content in a box for formatting

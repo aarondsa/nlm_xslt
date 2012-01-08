@@ -1,0 +1,96 @@
+/*CSS template for the output of the xml2html template
+Created by Aaron D'Sa for Cambridge Medicine Journal
+http://www.cambridgemedicine.org
+
+
+-----NOTES-----
+If tags are themed universally, comment out the theming that isn't required. For example if 
+the site already themes <h1> tags, comment out h1.article-title etc.
+
+Alternatively, if articles will be themed separately to the main site, article theming can be set here!
+
+*/
+
+
+
+/*Formatting for the front of the article */
+
+
+table.front-journal
+	{ 
+	}
+
+table.front-article
+	{
+	}
+
+h1.article-title
+	{
+	font-weight: 2em; 
+	colour: #006666
+	}
+
+h2.subtitle
+	{
+	font-weight: 1.5em;
+	colour: #006666;
+	}
+
+/* Formatting for the body of the article */
+
+
+h2.table-of-contents-title
+	{
+	font-weight: 1.5em;
+	colour: #000000;
+	}
+
+h3.subheading
+	{
+	width: 100%;
+	background-colour: #D14836;
+	font-weight: 1.2em;
+	colour: #ffffff
+	}
+
+div.xref
+	{
+	text-decoration:none;
+	colour: #D14836;
+	}
+
+table.figure
+	{
+	width:100%;
+	background-colour: #C0C0C0;
+	}
+
+table.table
+	{
+	width:100%;
+	background-colour: #C0C0C0;
+	}
+
+/* Formatting for the back of the article */
+
+h2.references
+	{
+	font-weight: 1.5em;
+	colour: #006666;
+	}
+
+div.references
+	{
+	background-colour: #C0C0C0;
+	}
+
+h2.footnotes
+	{
+	font-weight:1.5em;
+	colour: #006666;
+	}
+
+div.footnotes
+	{
+	background-colour: #ffffff;
+	}

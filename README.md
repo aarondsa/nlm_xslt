@@ -20,6 +20,7 @@ The template follows the structure of a standard NLM XML document
 
 # TO DO:
 
+* Standardised file names for images (articleID01.jpg, articleID02.jpg)
 * Include handling of tables
 * Tidy handling of URLs of files referenced in XML
 * Complete CSS classes for all sections

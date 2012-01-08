@@ -40,6 +40,10 @@ Back:
 
 	<xsl:template match="/">
 		<html>
+			<head>
+			<LINK REL="StyleSheet" href="article_css.css" TYPE="text/css" />
+			</head>
+			
 			<body>
 			<xsl:apply-templates></xsl:apply-templates>
 			</body>

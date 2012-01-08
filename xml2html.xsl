@@ -94,12 +94,12 @@ Back:
 		<table class="front front-article">
 		
 		<tr>
-		<td><h2><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></h2></td>
+		<td><div class="article-title" ><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></div></td>
 		</tr>
 		
 		<xsl:if test="title-group/subtitle">
 		<tr>
-		<td><h3><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></h3></td>
+		<td><div class="subtitle" ><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></div></td>
 		</tr>
 		</xsl:if>
 		
@@ -133,17 +133,20 @@ Back:
 <!--Table of contents-->
 
 <xsl:template match="article/body">
-		<div class="body table-of-contents">
-		<h3>Contents</h3>
-		<table class="body table-of-contents">
+		<div class="table-of-contents">
+		
+		<div class="table-of-contents-title">Contents</div>
+		<table class="table-of-contents">
+		
 		<xsl:for-each select="sec/title">
 			<tr>
 			<td  width="5%"></td>
 			<td>
-			<a><xsl:attribute name="href">#<xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:value-of select="."></xsl:value-of></a>
+			<a><xsl:attribute name="href">#<xsl:value-of select="."></xsl:value-of></xsl:attribute>-<xsl:value-of select="."></xsl:value-of></a>
 			</td>
 			</tr>
 		</xsl:for-each>
+		
 		</table>
 		<hr></hr>
 		</div>

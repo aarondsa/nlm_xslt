@@ -1,5 +1,9 @@
-table.front
+table.front-journal
 	{ 
+	}
+
+table.front-article
+	{
 	}
 
 div.article-title
@@ -13,3 +17,15 @@ div.subtitle
 	font-weight: 1.5em;
 	colour: #006666;
 	}
+
+
+div.table-of-contents-title
+	{
+	font-weight: 1.5em;
+	colour: #006666;
+	}
+
+
+
+
+

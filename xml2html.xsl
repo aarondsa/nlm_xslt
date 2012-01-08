@@ -103,12 +103,13 @@ Back:
 		</tr>
 		</xsl:if>
 		
+		<!--For some reason I can't get this to work! it outputs the first two nodes rather than just the first one.
 		<xsl:if test=".//subject">
 		<tr>
 		<td><h4><xsl:apply-templates select=".//subj-group[1]/subject[1]"></xsl:apply-templates></h4></td>
 		</tr>
 		</xsl:if>
-		
+		-->
 		<xsl:for-each select="contrib-group/contrib">
 		<tr>
 		<td>

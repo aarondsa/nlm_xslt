@@ -58,7 +58,7 @@ Back:
 <!--Display journal metadata-->
 
 	<xsl:template match="/article/front/journal-meta">
-		<table class="front front-journal">
+		<table class="front-journal">
 		<xsl:if test="journal-id">
 			<tr>
 			<td><strong>Journal ID:</strong></td><td><xsl:apply-templates select="journal-id[1]"></xsl:apply-templates></td>
@@ -91,7 +91,7 @@ Back:
 <!--Display article metadata-->
 
 	<xsl:template match="/article/front/article-meta">
-		<table class="front front-article">
+		<table class="front-article">
 		
 		<tr>
 		<td><div class="article-title" ><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></div></td>
@@ -136,6 +136,7 @@ Back:
 		<div class="table-of-contents">
 		
 		<div class="table-of-contents-title">Contents</div>
+		
 		<table class="table-of-contents">
 		
 		<xsl:for-each select="sec/title">
@@ -166,8 +167,8 @@ Back:
 </xsl:template>
 
 <xsl:template match="/article/body/sec/title">
-	<h3 class="body subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
-	</h3>
+	<div class="subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
+	</div>
 </xsl:template>
 
 <xsl:template match="//xref">

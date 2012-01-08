@@ -22,10 +22,25 @@ div.subtitle
 div.table-of-contents-title
 	{
 	font-weight: 1.5em;
-	colour: #006666;
+	colour: #000000;
 	}
 
+div.subheading
+	{
+	width: 100%;
+	background-colour: #D14836;
+	font-weight: 1.2em;
+	colour: #ffffff
+	}
 
+div.xref
+	{
+	text-decoration:none;
+	colour: #D14836;
+	}
 
-
-
+table.figure
+	{
+	width:100%;
+	background-colour: #C0C0C0;
+	}

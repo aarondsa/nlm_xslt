@@ -170,6 +170,18 @@ Back:
 	</div>
 </xsl:template>
 
+<xsl:template match="/article/body/sec/p/bold">
+	<strong>
+		<xsl:apply-templates></xsl:apply-templates>
+	</strong>
+</xsl:template>
+
+<xsl:template match="/article/body/sec/p/italic">
+	<i>
+		<xsl:apply-templates></xsl:apply-templates>
+	</i>
+</xsl:template>
+
 <xsl:template match="/article/body/sec/title">
 	<h3 class="subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
 	</h3>

@@ -1,6 +1,14 @@
 /*CSS template for the output of the xml2html template
 Created by Aaron D'Sa for Cambridge Medicine Journal
 http://www.cambridgemedicine.org
+
+
+-----NOTES-----
+If tags are themed universally, comment out the theming that isn't required. For example if 
+the site already themes <h1> tags, comment out h1.article-title etc.
+
+Alternatively, if articles will be themed separately to the main site, article theming can be set here!
+
 */
 
 

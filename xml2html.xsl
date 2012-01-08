@@ -155,8 +155,10 @@ Back:
  </xsl:template>
 
 <xsl:template match="/article/body/sec/p">
+	<div class="paragraph">
 	<p><xsl:apply-templates></xsl:apply-templates>
 	</p>
+	</div>
 </xsl:template>
 
 <xsl:template match="/article/body/sec/title">
@@ -165,9 +167,7 @@ Back:
 </xsl:template>
 
 <xsl:template match="//xref">
-	<a class="body xref"><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>
-		<sup><xsl:apply-templates></xsl:apply-templates>
-		</sup></a>
+	<a class="body xref"><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>	<sup><xsl:apply-templates></xsl:apply-templates></sup></a>
 </xsl:template>
 
 <xsl:template match="//fig">
@@ -183,9 +183,12 @@ Back:
 		
 		<tr>
 			<td>
+				
+				<!--This is where you set the target URL of the image. for CMJ it is http://www.cambridgemedicine.org/images/. requires some 'string expression work' -->
 				<a><xsl:attribute name="href"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute>
 				<img width="100px" ><xsl:attribute name="src"><xsl:value-of select="media/@xlink:href"></xsl:value-of></xsl:attribute></img>
 				</a>
+				
 			</td>
 			<td>
 				<xsl:apply-templates select="caption"></xsl:apply-templates>
@@ -195,11 +198,33 @@ Back:
 	</table>
 </xsl:template>
 
-<!--REFERENCES-->
+<xsl:template match="//table-wrap">
+	<hr></hr>
+	<div class="table" >
+	
+	<strong>
+		<xsl:apply-templates select="label"></xsl:apply-templates>
+	</strong>
+	<br>
+	</br>
+	
+	<xsl:apply-templates select="table"></xsl:apply-templates>
+	
+	<br>
+	</br>
+	<i>
+		<xsl:apply-templates select="caption"></xsl:apply-templates>
+	</i>
+	
+	</div>
+	<hr></hr>
+</xsl:template>
+
+<!--BACK OF ARTICLE-->
 
 <xsl:template match="/article/back/ref-list">
 	<div class="back" >
-	<xsl:apply-templates></xsl:apply-templates>
+		<xsl:apply-templates></xsl:apply-templates>
 	</div>
 </xsl:template>
 

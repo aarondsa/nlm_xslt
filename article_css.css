@@ -1,2 +1,15 @@
-/* Generated with EditiX at Sun Jan 08 17:28:27 GMT 2012 */
+table.front
+	{ 
+	}
 
+div.article-title
+	{
+	font-weight: 2em; 
+	colour: #006666
+	}
+
+div.subtitle
+	{
+	font-weight: 1.5em;
+	colour: #006666;
+	}

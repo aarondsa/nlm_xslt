@@ -60,6 +60,7 @@ Back:
 	 </xsl:template>
 
 <!--Display journal metadata-->
+<!-- Don't want journal metadata for all site, so it's commented out!
 
 	<xsl:template match="/article/front/journal-meta">
 		<table class="front-journal">
@@ -91,7 +92,7 @@ Back:
 		</table>
 		
 	</xsl:template>
-
+-->
 <!--Display article metadata-->
 
 	<xsl:template match="/article/front/article-meta">

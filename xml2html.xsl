@@ -94,12 +94,12 @@ Back:
 		<table class="front-article">
 		
 		<tr>
-		<td><div class="article-title" ><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></div></td>
+		<td><h1 class="article-title" ><xsl:apply-templates select="title-group/article-title"></xsl:apply-templates></h1></td>
 		</tr>
 		
 		<xsl:if test="title-group/subtitle">
 		<tr>
-		<td><div class="subtitle" ><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></div></td>
+		<td><h2 class="subtitle" ><xsl:apply-templates select="title-group/subtitle"></xsl:apply-templates></h2></td>
 		</tr>
 		</xsl:if>
 		
@@ -135,7 +135,7 @@ Back:
 <xsl:template match="article/body">
 		<div class="table-of-contents">
 		
-		<div class="table-of-contents-title">Contents</div>
+		<h2 class="table-of-contents-title">Contents</h2>
 		
 		<table class="table-of-contents">
 		
@@ -167,8 +167,8 @@ Back:
 </xsl:template>
 
 <xsl:template match="/article/body/sec/title">
-	<div class="subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
-	</div>
+	<h3 class="subheading"><xsl:attribute name="id"><xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:apply-templates></xsl:apply-templates>
+	</h3>
 </xsl:template>
 
 <xsl:template match="//xref">

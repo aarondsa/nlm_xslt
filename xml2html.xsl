@@ -172,7 +172,7 @@ Back:
 </xsl:template>
 
 <xsl:template match="//xref">
-	<a class="body xref"><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>	<sup><xsl:apply-templates></xsl:apply-templates></sup></a>
+	<a class="xref"><xsl:attribute name="href">#<xsl:value-of select="@rid"></xsl:value-of></xsl:attribute>	<sup><xsl:apply-templates></xsl:apply-templates></sup></a>
 </xsl:template>
 
 <xsl:template match="//fig">
@@ -236,11 +236,11 @@ Back:
  <!--References group-->
 
 <xsl:template match="/article/back/ref-list">
-	 <div class="back references">
+	 <div class="references">
 
 	 <hr />
-	 <h3>References
-	 </h3>
+	 <h2 class="references" >References
+	 </h2>
 	 
 	 <table>
 	 <xsl:for-each select="ref">
@@ -281,11 +281,11 @@ Back:
  <!--Footnotes group-->
  
  <xsl:template match="article/back/fn-group">
- 	 <div class="back footnotes">
+ 	 <div class="footnotes">
 
  	 <hr />
-	 <h3>Footnotes
-	 </h3>
+	 <h2 class="footnotes" >Footnotes
+	 </h2>
 	 
 		 <table>
 		 	<xsl:for-each select="fn">

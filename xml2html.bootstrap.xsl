@@ -143,7 +143,7 @@ The non-bootstrap code has been left in place so that the bootstrap code is easi
 2. make a div
 3. create a dropdown item (the first ul)
 4. for each title within each section, create a sub-list item, whose name is the title, and which links to the title
---!>
+-->
 
 <xsl:template match="article/body">
 		<div>	
@@ -176,7 +176,7 @@ The non-bootstrap code has been left in place so that the bootstrap code is easi
 		</table>
 		<hr></hr>
 		</div>
---!>
+-->
 
 		<xsl:apply-templates></xsl:apply-templates>
 </xsl:template>

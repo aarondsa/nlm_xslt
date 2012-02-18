@@ -60,8 +60,8 @@ Back:
 	 </xsl:template>
 
 <!--Display journal metadata-->
-<!-- Don't want journal metadata for all site, so it's commented out!
-
+<!-- Don't want journal metadata for all site, so it's commented out!-->
+<div>
 	<xsl:template match="/article/front/journal-meta">
 		<table class="front-journal">
 		<xsl:if test="journal-id">
@@ -92,7 +92,7 @@ Back:
 		</table>
 		
 	</xsl:template>
--->
+</div>
 <!--Display article metadata-->
 
 	<xsl:template match="/article/front/article-meta">
@@ -135,9 +135,29 @@ Back:
 
 <!--BODY OF THE ARTICLE-->
 
-<!--Table of contents-->
+<!--Table of contents
+
+The non-bootstrap code has been left in place so that the bootstrap code is easier to understand. In essence, we:
+
+1. go to the body of the article
+2. make a div
+3. create a dropdown item (the first ul)
+4. for each title within each section, create a sub-list item, whose name is the title, and which links to the title
+--!>
 
 <xsl:template match="article/body">
+		<div>	
+		<ul class="nav pills">
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b> </a>
+				<ul class="dropdown-menu">
+				<xsl:for-each select="sec/title">
+				<li><a><xsl:attribute name="href">#<xsl:value-of select="."></xsl:value-of></xsl:attribute><xsl:value-of select="."></xsl:value-of></a></li>
+				</xsl:for-each>
+				</ul>
+			</li>
+		</ul>					
+		</div>
+<!--
 		<div class="table-of-contents">
 		
 		<h2 class="table-of-contents-title">Contents</h2>
@@ -156,6 +176,8 @@ Back:
 		</table>
 		<hr></hr>
 		</div>
+--!>
+
 		<xsl:apply-templates></xsl:apply-templates>
 </xsl:template>
 

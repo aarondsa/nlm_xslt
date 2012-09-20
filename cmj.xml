@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE article SYSTEM "http://dtd.nlm.nih.gov/ncbi/kipling/kipling-jp3.dtd">
+
+<article article-type="research-article" dtd-version="3.0" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="pmc">cmj</journal-id>
+			<journal-id journal-id-type="pubmed">cmj</journal-id>
+			<journal-id journal-id-type="publisher">cmj</journal-id>
+			<issn></issn>
+			<publisher>
+				<publisher-name>CMJ</publisher-name>
+			</publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="other"></article-id>
+			<article-id pub-id-type="pmid"></article-id>
+			<article-categories>
+				<subj-group>
+					<subject></subject>
+				</subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Evolving general practice consultation in Britain: issues of length and context</article-title>
+			</title-group>
+			<contrib-group>
+				<contrib contrib-type="author">
+					<name>
+						<surname></surname>
+						<given-names></given-names>
+					</name>
+					<role></role>
+					<xref ref-type="aff">
+						<sup>
+							<italic>a</italic>
+						</sup>
+					</xref>
+				</contrib>
+			</contrib-group>
+			<aff>
+				<sup>
+					<italic>a</italic>
+				</sup>
+				Department of General Practice and Primary Health Care, University of Leicester, Leicester LE5 4PW
+			</aff>
+			<author-notes>
+				<fn fn-type="con">
+					<p>Text relating to the authors...</p>
+				</fn>
+				<fn>
+					<p>Correspondence to: AUTHOR <email>EMAIL ADDRESS</email>
+					</p>
+				</fn>
+			</author-notes>
+			<pub-date pub-type="pub">
+				<day></day>
+				<month></month>
+				<year></year>
+			</pub-date>
+			<volume></volume>
+			<issue></issue>
+			<fpage></fpage>
+			<lpage></lpage>
+			<history>
+				<date date-type="accepted">
+					<day></day>
+					<month></month>
+					<year></year>
+				</date>
+			</history>
+			<permissions>
+				<copyright-statement>Copyright © 2012, CMJ</copyright-statement>
+				<copyright-year>2012</copyright-year>
+			</permissions>
+		</article-meta>
+	</front>
